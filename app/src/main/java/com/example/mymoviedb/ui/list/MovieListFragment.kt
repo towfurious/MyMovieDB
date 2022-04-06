@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.mymoviedb.MainApp
 import com.example.mymoviedb.R
-import com.example.mymoviedb.appComponent
 import com.example.mymoviedb.databinding.FragmentMoviesListBinding
 import com.example.mymoviedb.model.entities.Movie
 import com.example.mymoviedb.ui.description.DescriptionFragment
@@ -25,7 +25,7 @@ class MovieListFragment : Fragment() {
     private val binding get() = _binding!!
 
     override fun onAttach(context: Context) {
-        context.appComponent.inject(this)
+        (context.applicationContext as MainApp).appComponent.inject(this)
         super.onAttach(context)
     }
 
