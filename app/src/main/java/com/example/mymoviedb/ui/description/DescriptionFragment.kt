@@ -42,12 +42,6 @@ class DescriptionFragment : Fragment() {
         const val OVERVIEW = "overview"
         const val POSTER_PATH = "poster_path"
         const val TITLE = "title"
-
-        fun newInstance(bundle: Bundle): DescriptionFragment {
-            val fragment = DescriptionFragment()
-            fragment.arguments = bundle
-            return fragment
-        }
     }
 
     override fun onDestroyView() {
