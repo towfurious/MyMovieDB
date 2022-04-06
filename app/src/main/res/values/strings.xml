@@ -9,5 +9,5 @@
     <string name="space_invaders">👾👾👾</string>
     <string name="rate">rate</string>
     <string name="toast_error">Error</string>
-    <string name="title_desc">DescriptionFragment</string>
+    <string name="title_desc">Description</string>
 </resources>

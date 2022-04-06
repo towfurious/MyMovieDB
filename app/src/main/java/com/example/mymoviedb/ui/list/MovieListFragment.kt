@@ -60,6 +60,7 @@ class MovieListFragment : Fragment() {
                             putString(DescriptionFragment.OVERVIEW, data.overview)
                             putString(DescriptionFragment.POSTER_PATH, data.posterPath)
                             putString(DescriptionFragment.TITLE, data.title)
+                            putString(DescriptionFragment.ORIGINAL_TITLE, data.originalTitle)
                         }
                         findNavController().navigate(R.id.nav_desc, bundle)
                     }

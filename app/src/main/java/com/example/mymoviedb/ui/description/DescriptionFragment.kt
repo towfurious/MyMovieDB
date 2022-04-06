@@ -35,6 +35,7 @@ class DescriptionFragment : Fragment() {
             scale(Scale.FILL)
         }
         movieTitle.text = requireArguments().getString(TITLE)
+        movieOriginalTitle.text = requireArguments().getString(ORIGINAL_TITLE)
         movieDescription.text = requireArguments().getString(OVERVIEW)
     }
 
@@ -42,6 +43,7 @@ class DescriptionFragment : Fragment() {
         const val OVERVIEW = "overview"
         const val POSTER_PATH = "poster_path"
         const val TITLE = "title"
+        const val ORIGINAL_TITLE = "original_title"
     }
 
     override fun onDestroyView() {
