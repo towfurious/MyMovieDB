@@ -17,4 +17,9 @@
         android:label="@string/title_about"
         tools:layout="@layout/layout_about" />
 
+    <fragment
+        android:id="@+id/nav_desc"
+        android:name="com.example.mymoviedb.ui.description.DescriptionFragment"
+        android:label="@string/title_desc" />
+
 </navigation>

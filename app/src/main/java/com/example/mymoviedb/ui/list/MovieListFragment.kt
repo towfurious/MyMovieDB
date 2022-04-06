@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.mymoviedb.R
 import com.example.mymoviedb.appComponent
 import com.example.mymoviedb.databinding.FragmentMoviesListBinding
@@ -55,18 +56,12 @@ class MovieListFragment : Fragment() {
                 // Put data here
                 adapter = MovieListAdapter(object : OutsideInterface {
                     override fun onItemViewClick(data: Movie) {
-                        val fragmentManager = activity?.supportFragmentManager
-                        fragmentManager?.let { manager ->
-                            val bundle = Bundle().apply {
-                                putString(DescriptionFragment.OVERVIEW, data.overview)
-                                putString(DescriptionFragment.POSTER_PATH, data.posterPath)
-                                putString(DescriptionFragment.TITLE, data.title)
-                            }
-                            manager.beginTransaction()
-                                .add(R.id.container, DescriptionFragment.newInstance(bundle))
-                                .addToBackStack(null)
-                                .commitAllowingStateLoss()
+                        val bundle = Bundle().apply {
+                            putString(DescriptionFragment.OVERVIEW, data.overview)
+                            putString(DescriptionFragment.POSTER_PATH, data.posterPath)
+                            putString(DescriptionFragment.TITLE, data.title)
                         }
+                        findNavController().navigate(R.id.nav_desc, bundle)
                     }
 
                     override fun onDataEnding() {
